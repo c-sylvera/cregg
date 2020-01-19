@@ -1,45 +1,32 @@
-# Hello, world!
-#
-# This is an example function named 'hello'
-# which prints 'Hello, world!'.
-#
-# You can learn more about package authoring with RStudio at:
-#
-#   http://r-pkgs.had.co.nz/
-#
-# Some useful keyboard shortcuts for package authoring:
-#
-#   Install Package:           'Cmd + Shift + B'
-#   Check Package:             'Cmd + Shift + E'
-#   Test Package:              'Cmd + Shift + T'
-
-library(devtools)
-library(roxygen2)
-library(ggthemes)
-library(hrbrthemes)
-
-
-#' Cregg's theme function
+#'@title Cregg's theme function
 #'
-#' This function brings together particular elements
+#'@description  This function brings together particular elements
 #' I like for plotting along with customized background
 #' coloring for presentations
-#' @inheritParams ggplot2::theme_bw
+#' @inheritParams ggplot2::theme_grey
+#' @title
 #' @export
 #' @keywords cregg
 #' @family themes cregg
-#'
+
 
 
 theme_cregg = function(base_size = 12, base_family = "serif"){
   dodger  = "#1E90FF"
   ivory = "#FFFFF0"
 
+  library(devtools)
+  library(roxygen2)
+  library(ggthemes)
+  library(hrbrthemes)
+  library(ggplot2)
+  library(ggthemes)
+
   theme_foundation(base_size = base_size,
                    base_family = base_family) +
-    theme(rect = element_rect(color = black, fill = ivory),
+    theme(rect = element_rect(color = "black", fill = ivory),
           line = element_line(color = dodger),
-          text = element_text(color = dodger),
+          text = element_text(color = "black"),
           #title is centered, 20 point, bold, dodger blue
           plot.title = element_text(face = "bold",
                                     size = rel(1.8),
@@ -64,15 +51,15 @@ theme_cregg = function(base_size = 12, base_family = "serif"){
           #keepin axis titles consistent, bro
           axis.title = element_text(face = "plain",
                                     color = dodger,
-                                    size = rel(1)),
+                                    size = rel(1.4)),
           #keepin axis text consistent, bro
           axis.text = element_text(face = "plain",
-                                   color = dodger,
+                                   color = "black",
                                    size = rel(1)),
           #Both axis lines
           axis.line = element_line(color = "black"),
           #No axis ticks, broseph
-          axis.ticks = element_blank(),
+          axis.ticks = element_line(color = "black"),
           #No gridlines, (maybe revisit this)
           panel.grid.major = element_blank(),
           panel.grid.minor = element_blank(),
@@ -88,3 +75,4 @@ theme_cregg = function(base_size = 12, base_family = "serif"){
           legend.position = "right",
           legend.direction = "vertical")
 }
+
