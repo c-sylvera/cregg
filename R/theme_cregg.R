@@ -12,8 +12,9 @@
 
 
 theme_cregg = function(base_size = 12, base_family = "serif"){
-  dodger  = "#1E90FF"
+  picasso  = "#0276FD"
   ivory = "#FFFFF0"
+  lite_gray = "#E8E8E8"
 
   library(devtools)
   library(roxygen2)
@@ -25,32 +26,32 @@ theme_cregg = function(base_size = 12, base_family = "serif"){
   theme_foundation(base_size = base_size,
                    base_family = base_family) +
     theme(rect = element_rect(color = "black", fill = ivory),
-          line = element_line(color = dodger),
+          line = element_line(color = picasso),
           text = element_text(color = "black"),
           #title is centered, 20 point, bold, dodger blue
           plot.title = element_text(face = "bold",
                                     size = rel(1.8),
                                     hjust = 0.5,
-                                    color = dodger),
+                                    color = picasso),
           #Something about subtitles
           plot.subtitle = element_text(hjust = 0.5,
                                        size = rel(1),
                                        face = "plain",
-                                       color = dodger),
+                                       color = picasso),
           plot.caption = element_text(hjust = 0.5,
                                       size = rel(1),
                                       face = "plain",
-                                      color = dodger),
+                                      color = picasso),
           panel.background = element_blank(),
           panel.border = element_blank(),
           strip.text = element_text(hjust = 0.5,
                                     size = rel(1),
-                                    color = dodger,
+                                    color = picasso,
                                     face = "plain"),
           strip.background = element_blank(),
           #keepin axis titles consistent, bro
           axis.title = element_text(face = "plain",
-                                    color = dodger,
+                                    color = picasso,
                                     size = rel(1.4)),
           #keepin axis text consistent, bro
           axis.text = element_text(face = "plain",
@@ -61,7 +62,8 @@ theme_cregg = function(base_size = 12, base_family = "serif"){
           #No axis ticks, broseph
           axis.ticks = element_line(color = "black"),
           #No gridlines, (maybe revisit this)
-          panel.grid.major = element_blank(),
+          panel.grid.major.y = element_line(color = lite_gray),
+          panel.grid.major.x = element_blank(),
           panel.grid.minor = element_blank(),
           #legend has no border
           legend.background = element_rect(color = NA),
