@@ -10,7 +10,7 @@ I like for plotting along with customized background
 coloring for presentations
 }
 \usage{
-theme_cregg(base_size = 12, base_family = "serif")
+theme_cregg(base_size = 12, base_family = "serif", color = curious)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{

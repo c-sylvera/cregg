@@ -11,9 +11,10 @@
 
 
 
-theme_cregg = function(base_size = 12, base_family = "serif"){
+theme_cregg = function(base_size = 12, base_family = "serif", color = curious){
   picasso  = "#0276FD"
-  ivory = "#FFFFF0"
+  curious = "#2C6593"
+  ivory = "#FFFFF3"
   lite_gray = "#E8E8E8"
 
   library(devtools)
@@ -26,32 +27,30 @@ theme_cregg = function(base_size = 12, base_family = "serif"){
   theme_foundation(base_size = base_size,
                    base_family = base_family) +
     theme(rect = element_rect(color = "black", fill = ivory),
-          line = element_line(color = picasso),
+          line = element_line(),
           text = element_text(color = "black"),
           #title is centered, 20 point, bold, dodger blue
           plot.title = element_text(face = "bold",
                                     size = rel(1.8),
                                     hjust = 0.5,
-                                    color = picasso),
+                                    color = curious),
           #Something about subtitles
           plot.subtitle = element_text(hjust = 0.5,
                                        size = rel(1),
                                        face = "plain",
-                                       color = picasso),
+                                       color = curious),
           plot.caption = element_text(hjust = 0.5,
                                       size = rel(1),
-                                      face = "plain",
-                                      color = picasso),
+                                      face = "plain"),
           panel.background = element_blank(),
           panel.border = element_blank(),
           strip.text = element_text(hjust = 0.5,
                                     size = rel(1),
-                                    color = picasso,
                                     face = "plain"),
           strip.background = element_blank(),
           #keepin axis titles consistent, bro
           axis.title = element_text(face = "plain",
-                                    color = picasso,
+                                    color = curious,
                                     size = rel(1.4)),
           #keepin axis text consistent, bro
           axis.text = element_text(face = "plain",
